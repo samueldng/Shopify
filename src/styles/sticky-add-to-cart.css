@@ -1,0 +1,86 @@
+/* Sticky Add to Cart Styles */
+.sticky-add-to-cart {
+  @apply fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-40 transform transition-transform duration-300;
+}
+
+.sticky-add-to-cart.hidden {
+  @apply translate-y-full;
+}
+
+.sticky-add-to-cart.visible {
+  @apply translate-y-0;
+}
+
+.sticky-content {
+  @apply max-w-7xl mx-auto px-4 py-3;
+}
+
+.sticky-product-info {
+  @apply flex items-center space-x-4;
+}
+
+.sticky-product-image {
+  @apply w-12 h-12 rounded-lg overflow-hidden flex-shrink-0;
+}
+
+.sticky-product-details {
+  @apply flex-1 min-w-0;
+}
+
+.sticky-product-name {
+  @apply font-semibold text-gray-900 truncate;
+}
+
+.sticky-product-price {
+  @apply text-lg font-bold text-blue-600;
+}
+
+.sticky-actions {
+  @apply flex items-center space-x-3;
+}
+
+.quantity-selector {
+  @apply flex items-center border border-gray-300 rounded-lg overflow-hidden;
+}
+
+.quantity-btn {
+  @apply w-10 h-10 flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors;
+}
+
+.quantity-input {
+  @apply w-16 h-10 text-center border-0 focus:outline-none focus:ring-0;
+}
+
+.sticky-add-btn {
+  @apply px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors;
+}
+
+.sticky-cart-btn {
+  @apply p-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors;
+}
+
+@media (max-width: 768px) {
+  .sticky-content {
+    @apply px-3 py-2;
+  }
+  
+  .sticky-product-info {
+    @apply space-x-2;
+  }
+  
+  .sticky-product-image {
+    @apply w-10 h-10;
+  }
+  
+  .sticky-actions {
+    @apply space-x-2;
+  }
+  
+  .quantity-selector {
+    @apply scale-90;
+  }
+  
+  .sticky-add-btn {
+    @apply px-4 py-2 text-sm;
+  }
+}

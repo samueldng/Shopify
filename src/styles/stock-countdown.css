@@ -1,0 +1,364 @@
+/* Stock Countdown Animations & Styles */
+
+/* Pulse Animation for Urgent States */
+@keyframes urgentPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 8px rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes lowStockBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3px);
+  }
+  60% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes countdownFlip {
+  0% {
+    transform: rotateX(0);
+  }
+  50% {
+    transform: rotateX(-90deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.6);
+  }
+}
+
+/* Stock Status Containers */
+.stock-countdown-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.stock-status-badge {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.stock-status-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Urgent Stock Status */
+.stock-urgent {
+  animation: urgentPulse 2s infinite;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  border: none;
+}
+
+.stock-urgent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Low Stock Status */
+.stock-low {
+  animation: lowStockBounce 3s infinite;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+}
+
+/* Available Stock Status */
+.stock-available {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  border: none;
+}
+
+/* Out of Stock */
+.stock-out {
+  background: linear-gradient(135deg, #6b7280, #4b5563);
+  color: white;
+  border: none;
+  opacity: 0.8;
+}
+
+/* Countdown Timer Styles */
+.countdown-timer {
+  position: relative;
+  background: linear-gradient(135deg, #1f2937, #111827);
+  border: 2px solid #374151;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.countdown-timer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+}
+
+.countdown-urgent {
+  background: linear-gradient(135deg, #dc2626, #991b1b);
+  animation: glow 2s infinite;
+  border-color: #ef4444;
+}
+
+.countdown-low {
+  background: linear-gradient(135deg, #d97706, #92400e);
+  border-color: #f59e0b;
+}
+
+/* Timer Digits */
+.timer-digit {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 0 2px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-digit:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.timer-digit.flip {
+  animation: countdownFlip 0.6s ease-in-out;
+}
+
+/* Timer Labels */
+.timer-label {
+  font-size: 0.75rem;
+  opacity: 0.8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Urgency Messages */
+.urgency-message {
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.urgency-message:hover {
+  transform: translateX(2px);
+}
+
+.urgency-message::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* Flash Sale Message */
+.flash-sale-message {
+  background: linear-gradient(135deg, #fef2f2, #fee2e2);
+  border: 2px solid #fecaca;
+  position: relative;
+  overflow: hidden;
+}
+
+.flash-sale-message::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(239, 68, 68, 0.1),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+/* Ping Animation for Indicators */
+.ping-indicator {
+  position: relative;
+}
+
+.ping-indicator::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  opacity: 0.75;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* Progress Bar for Stock Level */
+.stock-progress {
+  width: 100%;
+  height: 4px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.stock-progress-bar {
+  height: 100%;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+  position: relative;
+}
+
+.stock-progress-bar.urgent {
+  background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.stock-progress-bar.low {
+  background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.stock-progress-bar.available {
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.stock-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .countdown-timer {
+    padding: 12px 16px;
+  }
+  
+  .timer-digit {
+    padding: 6px 8px;
+    margin: 0 1px;
+  }
+  
+  .timer-label {
+    font-size: 0.625rem;
+  }
+  
+  .stock-status-badge {
+    padding: 8px 12px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .stock-countdown-container {
+    color: #f9fafb;
+  }
+  
+  .countdown-timer {
+    background: linear-gradient(135deg, #374151, #1f2937);
+    border-color: #4b5563;
+  }
+  
+  .timer-digit {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .urgency-message {
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .stock-urgent,
+  .countdown-urgent,
+  .ping-indicator::before,
+  .timer-digit.flip {
+    animation: none;
+  }
+  
+  .stock-status-badge,
+  .countdown-timer,
+  .timer-digit {
+    transition: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .stock-status-badge,
+  .countdown-timer {
+    border-width: 2px;
+    border-style: solid;
+  }
+  
+  .timer-digit {
+    border-width: 1px;
+    border-style: solid;
+  }
+}

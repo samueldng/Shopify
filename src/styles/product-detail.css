@@ -1,0 +1,196 @@
+/* Product Detail Page Styles */
+.product-detail-container {
+  @apply max-w-7xl mx-auto px-4 py-8;
+}
+
+.product-detail-grid {
+  @apply grid grid-cols-1 lg:grid-cols-2 gap-12;
+}
+
+.product-images {
+  @apply space-y-4;
+}
+
+.main-image {
+  @apply w-full aspect-square object-cover rounded-xl shadow-lg;
+}
+
+.thumbnail-grid {
+  @apply grid grid-cols-4 gap-3;
+}
+
+.thumbnail {
+  @apply w-full aspect-square object-cover rounded-lg cursor-pointer border-2 border-transparent hover:border-blue-300 transition-colors;
+}
+
+.thumbnail.active {
+  @apply border-blue-500;
+}
+
+.product-info {
+  @apply space-y-6;
+}
+
+.product-title {
+  @apply text-3xl font-bold text-gray-900;
+}
+
+.product-price {
+  @apply text-4xl font-bold text-blue-600;
+}
+
+.price-comparison {
+  @apply flex items-center space-x-3;
+}
+
+.original-price {
+  @apply text-xl text-gray-500 line-through;
+}
+
+.discount-badge {
+  @apply bg-red-100 text-red-800 text-sm font-semibold px-3 py-1 rounded-full;
+}
+
+.product-description {
+  @apply text-gray-600 leading-relaxed;
+}
+
+.product-features {
+  @apply space-y-3;
+}
+
+.feature-item {
+  @apply flex items-center space-x-3;
+}
+
+.feature-icon {
+  @apply w-5 h-5 text-green-500;
+}
+
+.feature-text {
+  @apply text-gray-700;
+}
+
+.product-actions {
+  @apply space-y-4;
+}
+
+.quantity-selector {
+  @apply flex items-center space-x-4;
+}
+
+.quantity-label {
+  @apply font-semibold text-gray-700;
+}
+
+.quantity-controls {
+  @apply flex items-center border border-gray-300 rounded-lg overflow-hidden;
+}
+
+.quantity-btn {
+  @apply w-12 h-12 flex items-center justify-center bg-gray-50 hover:bg-gray-100 transition-colors;
+}
+
+.quantity-input {
+  @apply w-20 h-12 text-center border-0 focus:outline-none focus:ring-0;
+}
+
+.action-buttons {
+  @apply flex space-x-4;
+}
+
+.add-to-cart-btn {
+  @apply flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg transition-colors;
+}
+
+.add-to-wishlist-btn {
+  @apply p-4 border border-gray-300 hover:border-red-300 hover:text-red-500 rounded-lg transition-colors;
+}
+
+.product-specs {
+  @apply bg-gray-50 rounded-lg p-6 space-y-4;
+}
+
+.specs-title {
+  @apply text-lg font-semibold text-gray-900;
+}
+
+.specs-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 gap-4;
+}
+
+.spec-item {
+  @apply flex justify-between py-2 border-b border-gray-200 last:border-b-0;
+}
+
+.spec-label {
+  @apply font-medium text-gray-700;
+}
+
+.spec-value {
+  @apply text-gray-600;
+}
+
+.stock-status {
+  @apply flex items-center space-x-2;
+}
+
+.stock-indicator {
+  @apply w-3 h-3 rounded-full;
+}
+
+.stock-indicator.in-stock {
+  @apply bg-green-500;
+}
+
+.stock-indicator.low-stock {
+  @apply bg-yellow-500;
+}
+
+.stock-indicator.out-of-stock {
+  @apply bg-red-500;
+}
+
+.stock-text {
+  @apply font-medium;
+}
+
+.stock-text.in-stock {
+  @apply text-green-700;
+}
+
+.stock-text.low-stock {
+  @apply text-yellow-700;
+}
+
+.stock-text.out-of-stock {
+  @apply text-red-700;
+}
+
+@media (max-width: 1024px) {
+  .product-detail-grid {
+    @apply grid-cols-1 gap-8;
+  }
+}
+
+@media (max-width: 640px) {
+  .product-detail-container {
+    @apply px-3 py-4;
+  }
+  
+  .product-title {
+    @apply text-2xl;
+  }
+  
+  .product-price {
+    @apply text-3xl;
+  }
+  
+  .action-buttons {
+    @apply flex-col space-x-0 space-y-3;
+  }
+  
+  .specs-grid {
+    @apply grid-cols-1;
+  }
+}

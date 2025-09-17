@@ -1,0 +1,570 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Premium Ótica Isis Typography */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  /* Premium Eyewear Typography */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-accent: 'Crimson Text', Georgia, serif;
+  
+  /* Font sizes */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  
+  /* Line heights */
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  
+  /* Letter spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  
+  /* Elegant Color Palette for Ótica Isis Brand */
+  --color-primary: #1a1a1a;        /* Deep charcoal */
+  --color-secondary: #8b7355;      /* Warm bronze */
+  --color-accent: #c9a96e;         /* Gold accent */
+  --color-neutral-50: #fafaf9;
+  --color-neutral-100: #f5f5f4;
+  --color-neutral-200: #e7e5e4;
+  --color-neutral-300: #d6d3d1;
+  --color-neutral-400: #a8a29e;
+  --color-neutral-500: #78716c;
+  --color-neutral-600: #57534e;
+  --color-neutral-700: #44403c;
+  --color-neutral-800: #292524;
+  --color-neutral-900: #1c1917;
+  
+  /* Luxury Brand Colors */
+  --color-luxury-cream: #faf8f5;
+  --color-luxury-pearl: #f8f6f0;
+  --color-luxury-champagne: #f7e7ce;
+  --color-luxury-rose-gold: #e8b4a0;
+  --color-luxury-deep-blue: #1e3a5f;
+  --color-luxury-emerald: #2d5a3d;
+  
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+  background-color: var(--color-luxury-cream);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Custom Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+.delay-1500 {
+  animation-delay: 1.5s;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  background-color: var(--color-luxury-cream);
+  min-width: 320px;
+  min-height: 100vh;
+  letter-spacing: -0.01em;
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+/* Premium Typography Hierarchy */
+h1, .heading-1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-primary);
+}
+
+h2, .heading-2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  color: var(--color-primary);
+}
+
+h3, .heading-3 {
+  font-family: var(--font-primary);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--color-primary);
+}
+
+h4, .heading-4 {
+  font-family: var(--font-primary);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-primary);
+}
+
+.text-luxury {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--color-secondary);
+}
+
+.text-premium {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+p {
+  line-height: var(--leading-relaxed);
+}
+
+/* Button improvements */
+button, .btn {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Input improvements */
+input, textarea, select {
+  font-family: var(--font-primary);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Focus improvements */
+*:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Mobile-first responsive utilities */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .text-responsive {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+  
+  /* Mobile hero adjustments */
+  .hero-mobile {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-title-mobile {
+    font-size: clamp(2.5rem, 8vw, 4rem) !important;
+    line-height: 1.1 !important;
+  }
+  
+  .hero-subtitle-mobile {
+    font-size: clamp(1.5rem, 6vw, 2.5rem) !important;
+  }
+  
+  .hero-description-mobile {
+    font-size: clamp(1rem, 4vw, 1.25rem) !important;
+    margin-top: 1rem;
+  }
+  
+  /* Mobile grid improvements */
+  .grid-mobile-1 {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .grid-mobile-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  /* Mobile button improvements */
+  .btn-mobile {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Mobile card improvements */
+  .card-mobile {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Mobile navigation */
+  .nav-mobile {
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Mobile spacing */
+  .section-mobile {
+    padding: 3rem 1rem;
+  }
+  
+  /* Mobile text adjustments */
+  .text-mobile-center {
+    text-align: center;
+  }
+  
+  /* Mobile image adjustments */
+  .img-mobile {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+/* Tablet responsive utilities */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  
+  .grid-tablet-2 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .grid-tablet-3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .section-tablet {
+    padding: 4rem 2rem;
+  }
+}
+
+/* Navigation Mobile Styles */
+@media (max-width: 768px) {
+  .nav-mobile {
+    height: 60px;
+    padding: 0 1rem;
+  }
+  
+  .nav-icons-mobile {
+    gap: 0.5rem;
+  }
+  
+  .icon-mobile {
+    padding: 0.5rem;
+  }
+  
+  .nav-link-mobile {
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+/* Large screen optimizations */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .section-desktop {
+    padding: 6rem 3rem;
+  }
+}
+  
+  .heading-responsive {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+/* Improved spacing for mobile */
+@media (max-width: 768px) {
+  .mobile-spacing > * + * {
+    margin-top: 1rem;
+  }
+  
+  .mobile-padding {
+    padding: 1rem;
+  }
+  
+  .mobile-margin {
+    margin: 0.5rem;
+  }
+}
+
+/* Premium Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-neutral-800) 100%);
+  color: var(--color-luxury-cream);
+  border: none;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(26, 26, 26, 0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.25);
+  background: linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-primary) 100%);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+  color: var(--color-luxury-cream);
+  border: none;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(139, 115, 85, 0.15);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(139, 115, 85, 0.25);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 0.75rem 1.875rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--color-luxury-cream);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(26, 26, 26, 0.15);
+}
+
+.btn-luxury {
+  background: linear-gradient(135deg, var(--color-luxury-rose-gold) 0%, var(--color-accent) 100%);
+  color: var(--color-primary);
+  border: none;
+  padding: 1rem 2.5rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 6px 20px rgba(232, 180, 160, 0.3);
+}
+
+.btn-luxury:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(232, 180, 160, 0.4);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-luxury-rose-gold) 100%);
+}
+
+/* Premium Input Styles */
+.input-primary {
+  border: 2px solid var(--color-neutral-300);
+  border-radius: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  background: var(--color-luxury-pearl);
+  color: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(8px);
+}
+
+.input-primary:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  background: var(--color-luxury-cream);
+  box-shadow: 0 0 0 4px rgba(139, 115, 85, 0.1);
+  transform: translateY(-1px);
+}
+
+.input-primary::placeholder {
+  color: var(--color-neutral-500);
+  font-style: italic;
+}
+
+.input-luxury {
+  border: 2px solid var(--color-accent);
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+  font-family: var(--font-accent);
+  font-size: 1rem;
+  background: linear-gradient(135deg, var(--color-luxury-cream) 0%, var(--color-luxury-pearl) 100%);
+  color: var(--color-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-luxury:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 6px rgba(201, 169, 110, 0.15);
+  transform: scale(1.02);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
