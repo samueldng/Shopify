@@ -10,7 +10,8 @@ const shopifyConfig = {
 // Cliente Shopify para acessar a Storefront API
 export const shopifyClient = Client.buildClient({
   storefrontAccessToken: shopifyConfig.storefrontAccessToken,
-  domain: shopifyConfig.domain
+  domain: shopifyConfig.domain,
+  apiVersion: '2023-10'
 });
 
 // Tipos para produtos Shopify
