@@ -339,10 +339,10 @@ const Home: React.FC = () => {
           <div className="text-center mt-12">
             <Link
               to="/products"
-              className="btn-primary btn-mobile sm:w-auto"
+              className="btn-primary btn-mobile sm:w-auto inline-flex items-center justify-center gap-2"
             >
-              Ver Todos os Produtos
-              <ArrowRight className="ml-2 h-5 w-5" />
+              <span className="truncate">Ver Todos os Produtos</span>
+              <ArrowRight className="h-4 w-4 flex-shrink-0" />
             </Link>
           </div>
         </div>
@@ -366,9 +366,9 @@ const Home: React.FC = () => {
               />
               <button
                 type="submit"
-                className="btn-primary btn-mobile sm:w-auto"
+                className="btn-primary btn-mobile sm:w-auto inline-flex items-center justify-center"
               >
-                Inscrever
+                <span className="truncate">Inscrever</span>
               </button>
             </form>
           </div>

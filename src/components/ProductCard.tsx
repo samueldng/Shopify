@@ -178,17 +178,16 @@ export default function ProductCard({ product, onQuickView, viewMode = 'grid' }:
 
   return (
     <div className={`product-card group relative ${isListView ? 'flex' : ''} ${isAddingToCart ? 'loading' : ''}`}>
-      <Link to={`/products/${product.id}`} className="block">
-        {/* Image Container */}
-        <div className={`product-image-container relative ${isListView ? 'w-48 h-48' : ''}`}>
-          <Link to={`/products/${product.id}`}>
-            <img
-              src={product.image_url || 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20eyeglasses%20product%20photo%20white%20background&image_size=square'}
-              alt={product.name}
-              className="product-image"
-              loading="lazy"
-            />
-          </Link>
+      {/* Image Container */}
+      <div className={`product-image-container relative ${isListView ? 'w-48 h-48' : ''}`}>
+        <Link to={`/products/${product.id}`}>
+          <img
+            src={product.image_url || 'https://trae-api-us.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20eyeglasses%20product%20photo%20white%20background&image_size=square'}
+            alt={product.name}
+            className="product-image"
+            loading="lazy"
+          />
+        </Link>
           
           {/* Enhanced gradient overlay */}
           <div className="image-overlay" />
@@ -250,13 +249,13 @@ export default function ProductCard({ product, onQuickView, viewMode = 'grid' }:
           </div>
           
           {/* Enhanced wishlist indicator */}
-          {isInWishlist(product.id) && (
-            <div className="wishlist-indicator" />
-          )}
-        </div>
+        {isInWishlist(product.id) && (
+          <div className="wishlist-indicator" />
+        )}
+      </div>
 
-        {/* Product Info */}
-        <div className={`product-info ${isListView ? 'flex-1' : ''}`}>
+      {/* Product Info */}
+      <div className={`product-info ${isListView ? 'flex-1' : ''}`}>
           {/* Enhanced stock countdown */}
           {product.stock_quantity <= 10 && product.stock_quantity > 0 && (
             <div className="stock-countdown">
@@ -328,15 +327,14 @@ export default function ProductCard({ product, onQuickView, viewMode = 'grid' }:
           </div>
           
           {/* Category with icon */}
-          {product.categories && (
-            <div className="text-sm text-gray-600 mb-4 capitalize flex items-center gap-1">
-              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              {product.categories.name}
-            </div>
-          )}
-        </div>
-      </Link>
-      
+        {product.categories && (
+          <div className="text-sm text-gray-600 mb-4 capitalize flex items-center gap-1">
+            <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+            {product.categories.name}
+          </div>
+        )}
+      </div>
+    
       {/* Enhanced add to cart button */}
       <div className="p-5 pt-0">
         <button

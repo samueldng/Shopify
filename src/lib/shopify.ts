@@ -3,8 +3,8 @@ import Client from 'shopify-buy';
 // Configuração do cliente Shopify
 // IMPORTANTE: Configure suas credenciais no arquivo .env
 const shopifyConfig = {
-  storefrontAccessToken: process.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN || 'your-storefront-access-token',
-  domain: process.env.VITE_SHOPIFY_DOMAIN || 'your-store.myshopify.com'
+  storefrontAccessToken: import.meta.env.VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN || '5b813100797e5a0bbce8bf21d862cdd4',
+  domain: import.meta.env.VITE_SHOPIFY_DOMAIN || 'your-store.myshopify.com'
 };
 
 // Cliente Shopify para acessar a Storefront API

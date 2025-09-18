@@ -46,9 +46,11 @@ Para integrar com sua loja Shopify, você precisa configurar as seguintes variá
 
 ```env
 # Shopify Storefront API
-VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN=seu_storefront_access_token_aqui
-VITE_SHOPIFY_STORE_DOMAIN=sua-loja.myshopify.com
+VITE_SHOPIFY_STOREFRONT_ACCESS_TOKEN=5b813100797e5a0bbce8bf21d862cdd4
+VITE_SHOPIFY_DOMAIN=otica-isis.myshopify.com
 ```
+
+**⚠️ Token Configurado**: O token `5b813100797e5a0bbce8bf21d862cdd4` já está configurado no projeto. Se você precisar usar um token diferente, substitua o valor no arquivo `.env`.
 
 2. **Como obter as credenciais do Shopify:**
 
