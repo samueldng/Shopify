@@ -8,7 +8,7 @@ import Layout from "./components/Layout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NewsletterPopup from "./components/NewsletterPopup";
 import ProductCompare from "./components/ProductCompare";
-import CompareFloatingButton from "./components/CompareFloatingButton";
+// CompareFloatingButton component removed as per user request
 import useNewsletterPopup from "./hooks/useNewsletterPopup";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -80,7 +80,7 @@ export default function App() {
             <Toaster position="top-right" richColors />
             <NewsletterPopup isOpen={isOpen} onClose={hidePopup} />
             <ProductCompare />
-            <CompareFloatingButton />
+            {/* CompareFloatingButton removed as per user request */}
             </Router>
           </CompareProvider>
         </WishlistProvider>
